@@ -1,0 +1,27 @@
+.header-content {
+    text-align: center;
+    color: #B3EFFF;
+}
+.input-content {
+    padding: 5px;
+}
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.shopping-list-wrapper {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+}
+.form-btn{
+    font-size: 15px;
+    margin: 5px;
+    border-radius: 5px;
+}

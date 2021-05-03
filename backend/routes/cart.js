@@ -38,9 +38,9 @@ cart.get('/:id', (req, res) => {
 });
 
 cart.post('/', (req, res) => {
-    const id = cartArray[cartArray.length -1].id + 1;
+    const newId = cartArray[cartArray.length -1].id + 1;
     const newItem = {
-        id: req.body.id,
+        id: newId,
         product: req.body.product,
         quantity: req.body.quantity,
         price: req.body.price

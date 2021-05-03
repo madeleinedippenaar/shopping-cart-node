@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CartApiService } from '../cart-api.service';
-import { Item } from '../item';
+import { CartApiService } from '../services/cart-api.service';
+import { Item } from '../models/item';
 
 @Component({
   selector: 'app-products',
@@ -21,12 +21,15 @@ export class ProductsComponent implements OnInit {
   public addProduct(product: Item ) {
     this.cartapiService.addItem(product).subscribe((items: Item[]) => {
       this.items = items;
-    })  
+      
+    }); 
   };
 
    public deleteItem(id: number) {
     this.cartapiService.deleteItem(id).subscribe((items: Item[]) => {
       this.items = items;
-    })  
+      
+    });
   };
   }
+  
