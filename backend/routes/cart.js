@@ -49,6 +49,7 @@ cart.post('/', (req, res) => {
     res.send(cartArray);
 });
 
+//this update logic had not been implemeted in front end yes
 cart.put('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const indexOfCart = cartArray.findIndex(i => i.id === id);
@@ -61,7 +62,7 @@ cart.put('/:id', (req, res) => {
 cart.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const indexOfCart = cartArray.findIndex(i => i.id === id);
-    cartArray.splice(indexOfCart, 1);
+    cartArray.splice(indexOfCart, 1).id -1;
     res.send(cartArray);
 });
 
