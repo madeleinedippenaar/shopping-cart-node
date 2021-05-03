@@ -4,14 +4,18 @@
         <div><h3>Building your shopping list when you're a little less hungry</h3></div>
     </div>
 </div>
-
-<div class="form-wrapper">
-    <form #productForm="ngForm" (submit)="addProduct(productForm.value)" >
-        <div class="input-content">Product:</div><div><input name="product" ngModel /></div>
-        <div class="input-content" >Price:</div> <div><input type="number" name="price" ngModel /></div>
-        <div class="input-content">Quantity:</div> <div><input type="number" name="quantity" ngModel /></div>
-        <button class="form-btn" >Submit</button>
-    </form>
+<div class="show-form-btn-wrapper"><button (click)="toggle()" id="toggle-btn">Add New Item</button></div>
+<div *ngIf="show" class="popup-overlay">
+    <div class="popup-boxes">
+        <div class="form-wrapper ">
+            <form #productForm="ngForm" (submit)="addProduct(productForm.value)" id="product-form" >
+                <div class="input-content">Product:</div><div><input name="product" ngModel /></div>
+                <div class="input-content" >Price:</div> <div><input type="number" name="price" ngModel /></div>
+                <div class="input-content">Quantity:</div> <div><input type="number" name="quantity" ngModel /></div>
+                <button  class="form-btn">Submit</button>
+            </form>
+        </div>
+    </div>
 </div>
 <div class="shopping-list-wrapper">
     <div class="shopping-list">

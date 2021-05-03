@@ -10,6 +10,7 @@ import { Item } from '../models/item';
 export class ProductsComponent implements OnInit {
 
   public items: Item[] = [];
+  show:boolean = false;
 
   constructor(private cartapiService : CartApiService) { }
 
@@ -21,6 +22,7 @@ export class ProductsComponent implements OnInit {
   public addProduct(product: Item ) {
     this.cartapiService.addItem(product).subscribe((items: Item[]) => {
       this.items = items;
+      this.show = !this.show;
       
     }); 
   };
@@ -30,6 +32,12 @@ export class ProductsComponent implements OnInit {
       this.items = items;
       
     });
+    
   };
+  toggle() {
+    this.show = !this.show;
+  };
+  
+  
   }
   
